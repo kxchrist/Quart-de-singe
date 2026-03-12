@@ -11,20 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-<meta name="theme-color" content="#ffb74d">
-
 </head>
-
 
 <body>
 
-
-<!-- ===== ACCUEIL ===== -->
+<!-- ACCUEIL -->
 
 <div id="welcome">
 
 <h1>🐒 Quart de Singe</h1>
-
 <p>Le jeu le plus drôle de la soirée</p>
 
 <button id="btnToGame">Jouer</button>
@@ -33,103 +28,33 @@
 
 
 
-<!-- ===== MENU LOBBY ===== -->
+<!-- MENU -->
 
 <div id="game" style="display:none;">
 
 <h1>🎮 Lobby</h1>
 
-<input
-type="text"
-id="playerNameInput"
-placeholder="Entrez votre prénom"
->
+<input id="playerNameInput" placeholder="Entrez votre prénom">
 
 <br><br>
 
-<button id="btnHostLobby" disabled>
-Créer un lobby
-</button>
-
-<button id="btnJoinLobby" disabled>
-Rejoindre un lobby
-</button>
+<button id="btnHostLobby" disabled>Créer un lobby</button>
+<button id="btnJoinLobby" disabled>Rejoindre un lobby</button>
 
 <br><br>
 
 <button id="btnBackLobby">Retour</button>
-<button id="btnSettings">⚙ Paramètres</button>
-
-
-
-<!-- ===== PARAMÈTRES ===== -->
-
-<div id="settingsPanel" style="display:none;">
-
-<button id="btnSettingsSound">🔊 Son</button>
-<button id="btnSettingsRules">📜 Règles</button>
-
-
-<div id="soundPanel" style="display:none;">
-
-<label>
-
-Volume effets
-
-<input
-type="range"
-min="0"
-max="100"
-value="100"
-id="volumeRange"
->
-
-</label>
-
-</div>
-
-
-<div id="rulesPanel" style="display:none;">
-
-<h2>Règles du jeu 🤙</h2>
-
-<ul>
-
-<li>Minimum 2 joueurs</li>
-<li>Chaque joueur commence avec 0 quart</li>
-<li>Si quelqu’un rit → +1 quart + shot</li>
-<li>Si quelqu’un regarde un singe → +1 quart</li>
-<li>À 4 quarts → 🐒 SINGE</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<!-- ===== CODE LOBBY ===== -->
 
 <div id="joinCodeContainer" style="display:none;">
-
-<input
-type="text"
-id="joinCodeInput"
-placeholder="Code lobby"
->
-
-<button id="btnSubmitJoin">
-Rejoindre
-</button>
-
+<input id="joinCodeInput" placeholder="Code lobby">
+<button id="btnSubmitJoin">Rejoindre</button>
 </div>
 
 </div>
 
 
 
-<!-- ===== LOBBY ===== -->
+<!-- LOBBY -->
 
 <div id="lobby" style="display:none;">
 
@@ -139,98 +64,51 @@ Rejoindre
 
 <div id="lobbyPlayers"></div>
 
-<button id="btnStartGame" disabled>
-Lancer la partie
-</button>
+<button id="btnStartGame" disabled>Lancer la partie</button>
 
 <br><br>
 
-<button id="btnBackFromLobby">
-Retour
-</button>
+<button id="btnBackFromLobby">Retour</button>
 
 </div>
 
 
 
-<!-- ===== PARTIE ===== -->
+<!-- PARTIE -->
 
 <div id="play" style="display:none;">
 
 <h1>🐒 Partie</h1>
 
-
-<!-- boutons du haut -->
-
-<div id="topButtons">
-
-<button id="btnBack">⬅ Retour</button>
 <button id="btnRandomRule">🎲 Règle</button>
 <button id="btnReset">🔄 Reset</button>
+<button id="btnBack">⬅ Retour</button>
 
-</div>
-
-
-<br>
-
-<div id="ruleBox">
-
-Aucune règle
-
-</div>
-
-
-
-<!-- ===== TABLE DE JEU ===== -->
+<div id="ruleBox">Aucune règle</div>
 
 <div id="gameTable">
 
-
-<!-- joueurs autour -->
-
 <div id="playersAround"></div>
-
-
-
-<!-- carte centrale -->
 
 <div id="mainCard" onclick="addQuart()">
 
-
-<!-- jauge bière -->
-
 <div id="beerGauge"></div>
-
-
-<!-- singe -->
 
 <div id="singeCard">🐒</div>
 
-
-<!-- nom joueur -->
-
 <div id="mainPlayerName"></div>
 
+</div>
 
 </div>
 
-
-</div>
-
-
-<br>
-
-
-<button id="btnEndGame">
-🏁 Fin de partie
-</button>
-
+<button id="btnEndGame">🏁 Fin de partie</button>
 
 </div>
 
 
 
-<!-- ===== CLASSEMENT ===== -->
+<!-- CLASSEMENT -->
 
 <div id="ranking" style="display:none;">
 
@@ -240,24 +118,13 @@ Aucune règle
 
 <br>
 
-<button onclick="location.reload()">
-Retour menu
-</button>
+<button onclick="location.reload()">Retour menu</button>
 
 </div>
-
-
-
-<!-- ===== AUDIO ===== -->
-
-<audio id="singe" src="petitsinge.mp3"></audio>
-<audio id="grossinge" src="grossinge.mp3"></audio>
-
 
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="script.js"></script>
 
 </body>
-
 </html>

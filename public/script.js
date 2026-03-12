@@ -263,12 +263,18 @@ function renderPlay(){
 let html="";
 let total=playersGame.length;
 
+let centerX = playersAround.offsetWidth / 2;
+let centerY = playersAround.offsetHeight / 2;
+
+let radiusX = 170;
+let radiusY = 200;
+
 playersGame.forEach((p,i)=>{
 
 let angle=(i/total)*2*Math.PI;
 
-let x=Math.cos(angle)*150+190;
-let y=Math.sin(angle)*170+200;
+let x = centerX + Math.cos(angle)*radiusX;
+let y = centerY + Math.sin(angle)*radiusY;
 
 let singeClass=p.quart>=4?"singePlayer":"";
 
@@ -294,21 +300,15 @@ playersAround.innerHTML=html;
 
 // joueur central
 
-let me=playersGame.find(p=>p.name===currentPlayerName);
+let me=playersGame.find(p=>p.id===socket.id);
 
 if(me){
 
 mainPlayerName.innerText=me.name;
 
-
-// jauge bière
-
 let percent=(me.quart/4)*100;
 
 beerGauge.style.height=percent+"%";
-
-
-// mode singe fou
 
 if(me.quart>=4){
 
